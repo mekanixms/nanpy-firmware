@@ -41,8 +41,7 @@ void nanpy::ArduinoClass::elaborate( nanpy::MethodDescriptor* m ) {
         }
 
 	if (strcmp(m->getName(), "pi") == 0) {  // pulseIn
-	  pulseIn(m->getInt(0), m->getInt(1));
-	  m->returns(0);
+	  m->returns(pulseIn(m->getInt(0), m->getInt(1)));
 	}
 
         if (strcmp(m->getName(), "s") == 0) {  // shiftOut
